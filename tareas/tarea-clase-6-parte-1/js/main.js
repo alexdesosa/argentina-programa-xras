@@ -40,7 +40,9 @@ function obtenerEdadesFamiliares() {
   const edades = [];
   $inputs.forEach(($input) => {
     const edad = Number($input.value);
-    edades.push(edad);
+    if (!isNaN(edad) && edad !== 0) {
+      edades.push(edad);
+    }
   });
   return edades;
 }
@@ -107,32 +109,27 @@ function calcularEdadPromedio(numeros) {
   return (acumulador / numeros.length).toFixed(2);
 }
 
-function validarEdad(edad){
-  if(edad === ''){
-    return 'Este campo no puede estar vacio';
+function validarEdad(edad) {
+  if (edad === '') {
+    return 'Este campo no puede estar vacío';
   }
-  if(!/^[0-9]+$/.test(edad)){
-    return 'Este campo debe ser sólo números y sin ningún espacio entre medio';
+  if (!/^[0-9]+$/.test(edad)) {
+    return 'Este campo debe ser solo números y sin espacios';
   }
   return '';
 }
 
-document.querySelector('#calcularFamilia').onsubmit = function(event){
-  validarFormulario(event)
-}
-
-function validarFormulario(event){
+function validarFormulario(event) {
   const $inputs = document.querySelectorAll('.familiar');
-
   const errores = [];
 
   $inputs.forEach(($input) => {
     const error = validarEdad($input.value);
     if (error) {
       errores.push(error);
-      $input.className = 'error';
+      $input.classList.add('error');
     } else {
-      $input.className = '';
+      $input.classList.remove('error');
     }
   });
 
@@ -152,8 +149,13 @@ function manejarErrores(errores) {
     $error.innerText = error;
     $errores.appendChild($error);
   });
-}
 
+  if (errores.length > 0) {
+    $errores.classList.remove('oculto');
+  } else {
+    $errores.classList.add('oculto');
+  }
+}
 
 document.querySelector('#resetearBoton').onclick = function(event) {
   document.querySelector('#familiares').innerHTML = '';
@@ -170,5 +172,3 @@ document.querySelector('#resetearBoton').onclick = function(event) {
 
   event.preventDefault();
 };
-
-

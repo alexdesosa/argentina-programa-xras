@@ -1,0 +1,22 @@
+{
+  "name": "js-xmas-edition-masteres",
+  "version": "1.0.0",
+  "description": "Tarea clase 10 con Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexdesosa/argentina-programa-xras.git"
+  },
+  "author": "Alejandro Jose Vargas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexdesosa/argentina-programa-xras/issues"
+  },
+  "homepage": "https://github.com/alexdesosa/argentina-programa-xras#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
