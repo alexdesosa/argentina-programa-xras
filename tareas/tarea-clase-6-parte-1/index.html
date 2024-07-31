@@ -6,31 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea 6</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
+    <div class="container">
     <form id="calcularFamilia">
-        <label for="cantidadFamilia">¿Cuánta gente hay en tu grupo familiar?</label>
-        <input type="number" id="cantidadFamilia" />
-        <button type="submit" id="crearBoton">Siguiente</button>
+        <div class="row">
+            <div class="col-md-6">
+                     <label for="cantidadFamilia">¿Cuánta gente hay en tu grupo familiar?</label>
+                     <input type="number" id="cantidadFamilia" />
+                     <button type="submit" id="crearBoton" class="btn btn-primary">Siguiente</button>
+                <div id="familiares">
 
-        <div id="familiares">
+                </div>
 
-        </div>
-
-        <div id="errores">
+                <div id="errores">
             
-        </div>
-        <button type="button" id="calcularBoton" class="oculto">Calcular</button> <br>
+                </div>
 
-        <div id="analisis" class="oculto">
+
+
+                <button type="button" id="calcularBoton" class="oculto btn btn-primary">Calcular</button> <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                        <div id="analisis" class="oculto">
             <p>La edad mayor es: <em id="edadMayor"> </em></p>
             <p>La edad menor es : <em id="edadMenor"> </em></p>
             <p>El promedio de edad es: <em id="edadPromedio"> </em></p>
         </div>
+            </div>
 
-        <button type="reset" id="resetearBoton">Resetear</button>
-    </form>
+        </div>
+
+
+        <button type="reset" id="resetearBoton" class="btn btn-danger">Resetear</button>
+    </form>        
+    </div>
+
     <script src="./js/pruebas.js"></script>
     <script src="./js/main.js"></script>
 </body>
